@@ -1,0 +1,11 @@
+# Links shown in the header, in this order.
+
+main:
+  - title: "About Me"
+    url: /
+
+  - title: "CV"
+    url: /cv/
+
+  - title: "Contact Me"
+    url: /contact/

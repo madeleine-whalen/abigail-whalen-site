@@ -1,0 +1,126 @@
+# Site-wide settings. Restart `jekyll serve` after editing this file.
+
+# Basic Site Settings
+locale                   : "en-US"
+site_theme               : "default" # "default", "air", "sunrise", "mint", "dirt" or "contrast"
+title                    : "Abigail Whalen"
+title_separator          : "-"
+name                     : &name "Abigail Whalen"
+description              : &description "Abigail Whalen — PhD student in philosophy at the University of Notre Dame, working on medieval and Islamic philosophy."
+
+# `url` and `baseurl` are overwritten automatically by the GitHub Actions deploy
+# workflow, so they do not need to be correct for GitHub Pages. They only affect
+# local previews and absolute URLs in the sitemap when building by hand.
+url                      : ""
+baseurl                  : ""
+
+# Site Author - controls the sidebar profile. Blank fields are simply not shown.
+author:
+  avatar           :  # e.g. "profile.jpg" — add the file to /images/ and put its filename here
+  name             : "Abigail Whalen"
+  pronouns         :
+  bio              : "PhD student in philosophy, working on medieval and Islamic philosophy."
+  location         : "Notre Dame, Indiana"
+  employer         : "University of Notre Dame"
+  uri              :
+  email            : "awhalen2@nd.edu"
+
+  # Academic profiles — fill in any you want linked from the sidebar
+  academia         :
+  googlescholar    :
+  orcid            :
+  philpapers       :
+  linkedin         :
+
+# Site Settings
+breadcrumbs              : false
+future                   : true
+atom_feed:
+  hide                   : true
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+
+og_image                 :  # Social media default site image
+og_description           :  # Social media default site image description
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   :
+  links:
+
+# Analytics
+analytics:
+  provider               : "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  google:
+    tracking_id          :
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - .bundle
+  - .github
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/theme.js
+  - .jekyll-cache
+  - .sass-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# These settings control how pages are rendered by default
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:title/
+timezone: America/Indiana/Indianapolis
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+# HTML Compression - https://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
