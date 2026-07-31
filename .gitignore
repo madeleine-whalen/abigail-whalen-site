@@ -3,7 +3,9 @@ _site/
 .jekyll-metadata
 .sass-cache/
 .bundle/
-vendor/
+# Anchored to the repo root: this is Bundler's vendor/bundle, and must not
+# match the vendored Sass libraries in _sass/vendor/.
+/vendor/
 Gemfile.lock
 .DS_Store
 _config_pages.yml
