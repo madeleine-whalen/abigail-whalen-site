@@ -1,0 +1,63 @@
+/* ==========================================================================
+    NAVY THEME - DARK VERSION
+    ========================================================================== */
+
+/* Navy inverts poorly: as a link colour on a dark ground it disappears.
+   So the dark theme keeps the navy family but moves it up the scale — a
+   navy-tinted charcoal ground with pale blue links, rather than gray. */
+$background                 : #16202e;
+$background-light           : mix(#fff, $background, 12%);
+$background-lighter         : mix(#fff, $background, 20%);
+
+$navy-pale                  : #9dc1ea;
+$navy-paler                 : #c3d9f2;
+$navy-button                : #2e5c9a;
+
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+
+$text                       : #e9eef5;
+
+/* Color codes used for the theme */
+$primary-color              : $navy-pale;
+
+/* Color codes used for the site */
+$danger-color               : #ee5f5b;
+$info-color                 : $navy-pale;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+/* Other basic settings for the template */
+$border-radius              : 3px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.2);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Dark theme for the site */
+html[data-theme="dark"] {
+    --global-base-color                 : #{$navy-button};
+    --global-accent-color               : #{$navy-pale};
+    --global-accent-tint                : #{$background-lighter};
+    --global-bg-color                   : #{$background};
+    --global-footer-bg-color            : #{$background};
+    --global-border-color               : #{$background-lighter};
+    --global-dark-border-color          : #{$background-light};
+    --global-code-background-color      : #{$background-light};
+    --global-code-text-color            : #{$text};
+    --global-fig-caption-color          : #{$light-gray};
+    --global-link-color                 : #{$navy-pale};
+    --global-link-color-hover           : #{$navy-paler};
+    --global-link-color-visited         : #{mix(#fff, $navy-pale, 15%)};
+    --global-masthead-link-color        : #{$text};
+    --global-masthead-link-color-hover  : #{$navy-pale};
+    --global-text-color                 : #{$text};
+    --global-text-color-light           : #f3f3f3;
+    --global-thead-color                : #{$background-lighter};
+}

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   SITE CUSTOMISATIONS
+
+   Accents that the theme's CSS variables don't reach on their own, plus a
+   few adjustments that serif body text wants. Imported last so it wins.
+   ========================================================================== */
+
+/* Serif needs a little more line height and a hair more size than the
+   sans-serif the template was built around. */
+body {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* The template hardcodes a sans-serif stack for the masthead, sidebar, and
+   footer rather than reading $global-font-family, so those need naming
+   explicitly. Selectors match the originals' specificity and win on order. */
+.masthead__inner-wrap,
+.greedy-nav,
+.sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6,
+.sidebar p, .sidebar li,
+.sidebar .author__name,
+.author__urls-wrapper,
+.page__footer li {
+  font-family: $global-font-family;
+}
+
+/* Headings in the deep navy, a step darker than body text. */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.author__name {
+  color: var(--global-accent-color);
+}
+
+/* The rule under each section heading picks up the navy tint rather than
+   a neutral gray, which ties the long CV page together. */
+.page__content h2 {
+  border-bottom: 1px solid var(--global-accent-tint);
+}
+
+/* Current page in the header: navy underline instead of the text colour. */
+.masthead__menu-item.selected a,
+.masthead__menu-item.selected a:hover {
+  color: var(--global-accent-color);
+  border-bottom: 2px solid var(--global-base-color);
+}
+
+/* Buttons default to the sans-serif stack; keep them with everything else. */
+.btn {
+  font-family: $global-font-family;
+  letter-spacing: 0.02em;
+}
+
+/* Blockquotes get a navy edge rather than a gray one. */
+blockquote {
+  border-left: 3px solid var(--global-base-color);
+  font-style: italic;
+}
+
+/* Site title in the masthead, set in the accent tone. */
+.masthead__menu-item--lg a {
+  color: var(--global-accent-color);
+}

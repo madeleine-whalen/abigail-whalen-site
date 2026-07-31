@@ -2,7 +2,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # "default", "air", "sunrise", "mint", "dirt" or "contrast"
+site_theme               : "navy" # custom navy theme in _sass/theme/_navy_{light,dark}.scss
 title                    : "Abigail Whalen"
 title_separator          : "-"
 name                     : &name "Abigail Whalen"

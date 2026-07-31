@@ -1,0 +1,61 @@
+/* ==========================================================================
+    NAVY THEME - LIGHT VERSION
+    ========================================================================== */
+
+/* Navy palette.
+   $navy is the deep anchor tone used for headings and the masthead;
+   $navy-link is lightened just enough to stay comfortably legible as link
+   text on white (about 9:1 contrast), while still reading as navy. */
+$navy                       : #0c2340;
+$navy-link                  : #1a4480;
+$navy-muted                 : #4a5f85;
+$navy-tint                  : #dbe2ec;
+
+/* Color codes used for the theme */
+$primary-color              : $navy-link;
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+$lighter-gray               : mix(#fff, $gray, 90%);
+
+$text-color                 : #2b3440;
+
+/* Color codes used for the site */
+$danger-color               : #b3453f;
+$info-color                 : $navy-link;
+$notice-color               : #7a8288;
+$success-color              : #3f7d52;
+$warning-color              : #b3781a;
+
+/* Other basic settings for the template */
+$border-radius              : 3px;
+$box-shadow                 : 0 1px 1px rgba(12, 35, 64, 0.12);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Light theme for the site */
+:root {
+    --global-base-color                 : #{$navy-link};
+    --global-accent-color               : #{$navy};
+    --global-accent-tint                : #{$navy-tint};
+    --global-bg-color                   : #fff;
+    --global-footer-bg-color            : #f4f6f9;
+    --global-border-color               : #{$navy-tint};
+    --global-dark-border-color          : #b9c4d4;
+    --global-code-background-color      : #f6f8fa;
+    --global-code-text-color            : #{$darker-gray};
+    --global-fig-caption-color          : #{mix(#fff, $text-color, 25%)};
+    --global-link-color                 : #{$navy-link};
+    --global-link-color-hover           : #{$navy};
+    --global-link-color-visited         : #{$navy-muted};
+    --global-masthead-link-color        : #{$text-color};
+    --global-masthead-link-color-hover  : #{$navy-link};
+    --global-text-color                 : #{$text-color};
+    --global-text-color-light           : #{$light-gray};
+    --global-thead-color                : #{$navy-tint};
+}
