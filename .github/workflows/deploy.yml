@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -28,16 +28,24 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
-      # Writes the correct `url` and `baseurl` into _config.yml for this
-      # Pages site, so the same repo works as a user site or a project site.
-      - name: Configure GitHub Pages
-        id: pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: jekyll
+      # A project site is served from /<repo>/, a user site (<owner>.github.io)
+      # from the root. Jekyll needs to know which, so that every internal link
+      # and asset path gets the right prefix.
+      # If you add a custom domain later, set baseurl to "" instead.
+      - name: Work out the site URL
+        run: |
+          owner=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ "$(echo "$repo" | tr '[:upper:]' '[:lower:]')" = "$owner.github.io" ]; then
+            baseurl=""
+          else
+            baseurl="/$repo"
+          fi
+          printf 'url: "https://%s.github.io"\nbaseurl: "%s"\n' "$owner" "$baseurl" > _config_pages.yml
+          cat _config_pages.yml
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --config _config.yml,_config_pages.yml
         env:
           JEKYLL_ENV: production
 
